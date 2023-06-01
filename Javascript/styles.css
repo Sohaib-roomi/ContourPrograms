@@ -1,0 +1,19 @@
+.root{
+    color: antiquewhite;
+}
+body{
+    background-color: powderblue;
+}
+h1{
+    color: blue
+}
+p{
+    red: color;
+}
+a{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

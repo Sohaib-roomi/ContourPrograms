@@ -1,0 +1,272 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* primary */
+    --primary-very-dark-magenta: hsl(300, 43%, 22%);
+    --primary-soft-pink: hsl(333, 80%, 67%);
+
+    /* neutral */
+    --dark-grayish-magenta: hsl(303, 10%, 53%);
+    --light-grayish-magenta: hsl(300, 24%, 96%);
+    --white: hsl(0, 0%, 100%);
+}
+
+html {
+    font-size: 15px;
+}
+
+body {
+    font-family: 'League Spartan', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+}
+.forBG {
+    background-image: url(./images/bg-pattern-top-mobile.svg), url(./images/bg-pattern-bottom-mobile.svg);
+    background-repeat: no-repeat , no-repeat;
+    background-position: top left, bottom right;
+    background-size: auto, 100%;
+    background-color: var(--white);
+}
+.container {
+    width: 100%;
+    display: grid;
+    gap: 1rem;
+}
+
+.headline {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-block: 3rem 2rem;
+}
+
+.heading {
+    /* font-size: starts at 2rem for mobile, increases until at desktop mode is 2.75rem; */
+    font-size: clamp(2rem, (1rem + 2.6vw), 3.25rem);
+    letter-spacing: -.03em;
+    line-height: .9em;
+    color: var(--primary-very-dark-magenta);
+    /* width: starts at 15rem for mobile, increases and settles at 25rem in desktop mode  */
+    width: clamp(15rem, (2rem + 17vw), 25rem);
+}
+
+.description {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.5rem;
+    color: var(--dark-grayish-magenta);
+    /* width: increases above 1400px, limited to 22.6rem below that */
+    width: max(24vw, 22.6rem);
+    
+}
+
+.heading,
+.description {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/*    STAR RATING     */
+
+.rating {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 327px;
+    padding-block-end: 2rem;
+}
+
+.rating_card {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    border-radius: .5rem;
+    background-color: var(--light-grayish-magenta);
+    padding: 1rem;
+}
+
+.stars {
+    width: 6.7rem;
+    min-width: 6.7rem;
+    height: 1.2rem;
+    background-image: url(./images/icon-star.svg);
+    background-repeat: space;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.rating_card > p {
+    font-weight: 700;
+    color: var(--primary-very-dark-magenta);
+    text-align: center;
+}
+/*    END OF STAR RATING     */
+
+/*              TESTIMONIALS               */
+/* .card in mobile 327x248px  (estimate)   */
+/* .card in desktop 350x234px (estimate)   */
+
+.testimonials {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0 auto;
+}
+
+.card {
+    border-radius: 1rem;
+    width: 100%;
+    max-width: 327px;
+    background-color: var(--primary-very-dark-magenta);
+    
+    /* CONTENT INSIDE THE CARD */
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 1.5rem 1rem 1rem;
+    line-height: 1.25rem;
+}
+
+.card > img {
+    border-radius: 50%;
+    place-self: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    padding: .5rem;
+}
+
+.name,
+.category,
+.review {
+    color: var(--white);
+    text-align: start;
+}
+
+.category {
+    color: var(--primary-soft-pink);
+}
+
+.review {
+    grid-column: 1/4;
+    padding: 1rem;
+}
+
+.subgrid {
+    align-self: center;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .forBG {
+        background-image: url(./images/bg-pattern-top-desktop.svg), url(./images/bg-pattern-bottom-desktop.svg);
+        background-position: top left, bottom right;
+    }
+
+    .rating {
+        max-width: 430px;
+        margin-top: 2rem;
+    }
+
+    .rating_card {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .rating_card > p {
+        margin: auto 0;
+    }
+
+    .stars {
+        margin: auto 2rem;
+    }
+}
+
+@media screen and (min-width: 1160px) {
+
+    .forBG {
+        background-size: auto, 70%;
+    }
+
+    .container {
+        max-width: unset;
+        height: 100vh;
+        place-content: center;
+        grid-template-areas: 
+            "heading heading . rating rating rating"
+            "card1 card1 card2 card2 card3 card3";
+        grid-template-columns: repeat(6, 175px);
+        row-gap: 5rem;
+    }
+
+    .headline {
+        grid-area: heading;
+        width: max-content;
+        padding-block-start: 2rem;
+    }
+
+    .heading,
+    .description {
+        text-align: left;
+        margin: unset;
+    }
+
+    .rating {
+        place-self: center;
+        grid-area: rating;
+    }
+
+    .rating_card {
+        grid-column: 3/5;
+    }
+
+    .rating_card:nth-child(2) {
+        margin-left: 1.8em;
+    }
+
+    .rating_card:nth-child(3) {
+        margin-left: 3.8em;
+    }
+    
+    .testimonials {
+        display: contents;
+    }
+
+    .testimonials > .card {
+        max-width: 350px;
+        justify-self: center;
+        /* height needs this so that the cards' bottoms do not line up  */
+        height: max-content;
+    }
+
+    .card:nth-child(1) {
+        grid-area: card1;
+    }
+
+    .card:nth-child(2) {
+        grid-area: card2;
+        margin-top: 1em;
+    }
+
+    .card:nth-child(3) {
+        grid-area: card3;
+        margin-top: 2em;
+    }  
+
+}
+
+.attribution {
+    margin-top: 1rem;
+    font-size: 11px;
+    text-align: center;
+  }
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+  }

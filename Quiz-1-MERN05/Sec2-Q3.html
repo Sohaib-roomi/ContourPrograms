@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        #Child{
+            border: 3px solid black;
+            background-color: lightgrey;
+        }
+        #GrandChild{
+            border: 3px solid yellow;
+            background-color: rgb(236, 186, 193);
+        }
+        #Parent{
+            border: 3px solid red;
+            background-color: lightblue;
+        }
+        #Parent{
+            margin-top: 3rem;
+        }
+        #Parent, #Child, #GrandChild{
+            text-align: center;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            margin-left: 6rem;
+            margin-right: 6rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="Parent">
+        Hi I am Parent Div
+        <div id="Child">
+            Hi I am Child div
+            <div id="GrandChild">
+                Hi I am Grandchild Div
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+Class Assignments:
+
+1* React Hooks (UseState, UseEffect, UseContext, UseRef, Custom Hooks)
+2* Node js Task Sir Taha
+Typing Test (Javascript, HTML, CSS, DOM) => Character Highlight
+
+
+
+Soft Skills:
+Resume Update
+LinkedIn Profile 
+
+General Self:
+LinkedIn Profile 
+
+Projects:
+API JS (Learn)
+
+
+3* To-Do List Javascript + HTML + CSS
+
+4* React Basic Concepts:
+State
+Props
+Components
+Hooks
+Spread, Rest
+Redux ( Redux Cycle, Action , Reducer, ActionCreater, Store, Thunk, )
+Redux Toolkit
+
+Local Storage
+Cookies
+Session Storage
+Index DB
+
+5* To-Do List React
+Basic Web Template on React (Pizza Restaurant)
+
+Node Js and Express
+Make Server (Prints Hello World)
+00000
+Resources:
+W3 Schools React (Pre Reqs JS Must before)]
+
+
